@@ -1,94 +1,103 @@
-/* Reset */
+/* Reset styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* General */
+body {
+  font-family: 'Roboto';
+  color: #cecdce;
+}
+
 ul {
   list-style: none;
 }
 
-a, a:hover {
+a {
   text-decoration: none;
-  color: #000;
-
-  display: inline-block;
-  width: 100%;
-  padding: 0.5rem;
+  color: #cecdce;
 }
 
-.page-container {
-  height: 100vh;
+a:hover {
+  text-decoration: underline;
+  color: #cecdce;
+}
 
+button {
+  border: 0;
+}
+
+/**/
+
+.pageContainer {
   display: flex;
+
+  width: 100vw;
+  height: 100vh;
 }
 
 aside {
   width: 33%;
-  padding: 0 1rem 2rem 1rem;
-  background: #d4dded;
-  font-size: 1.25rem;
+  background: #282a36;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-aside footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-aside footer h1 {
-  font-size: 1.5rem;
-}
-
-aside footer .social-card {
-  display: flex;
   justify-content: space-around;
 
-  width: 50%;
-  height: 1.5rem;
-}
-
-.navbar {
-  flex-direction: column;
-  align-items: center;
-}
-
-.navbar li {
-  border: 1px solid rgba(0, 0, 0, 0.26);
-  border-radius: 0.25rem;
-
-  margin-top: 1rem;
+  border-right: 1px solid #cecdce;
   text-align: center;
 }
 
-.navbar li:hover {
-  background: #0069d9;
+.listPageLinks {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.listPageLinks li + li {
+  margin-top: 1rem;
+}
+
+.listPageLinks a.active {
+  font-weight: bold;
+}
+
+.listSocialLinks {
+  width: 100%;
+}
+
+.listSocialLinks ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.listSocialLinks i {
+  font-size: 2rem;
 }
 
 main {
-  flex: 1;
-
   display: flex;
   align-items: center;
 
-  padding: 1.5rem;
+  background: #191921;
+  text-align: center;
+  padding: 4rem;
 }
 
-main .content h1 {
-  text-align: center;
+main img {
+  border-radius: 50%;
 }
 
-main .content p {
-  border: 1px solid rgba(0, 0, 0, 0.26);
-  border-radius: 0.25rem;
+main h1 {
+  font-size: 1.75rem;
+}
 
-  text-align: center;
+main h2 {
   font-size: 1.5rem;
 }
 
+main p {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
