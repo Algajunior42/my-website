@@ -79,25 +79,10 @@ aside {
 main {
   display: flex;
   align-items: center;
+  justify-content: center;
 
+  width: 100%;
   background: #191921;
   text-align: center;
   padding: 4rem;
-}
-
-main img {
-  border-radius: 50%;
-}
-
-main h1 {
-  font-size: 1.75rem;
-}
-
-main h2 {
-  font-size: 1.5rem;
-}
-
-main p {
-  font-size: 1.25rem;
-  font-weight: 300;
 }

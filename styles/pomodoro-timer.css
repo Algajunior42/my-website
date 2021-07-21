@@ -1,0 +1,21 @@
+.pomodoro-timer-container {
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #cecdce;
+  border-radius: 0.5rem;
+
+  padding: 2rem;
+}
+
+.pomodoro-timer-container h1 {
+  font-size: 1rem;
+}
+
+.time {
+  font-size: 4rem;
+}
+
+.actions button svg {
+  transform: translateY(-2px);
+}
