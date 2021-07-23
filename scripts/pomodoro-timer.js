@@ -4,10 +4,12 @@ const timerDynamicHTML = document.createElement('div')
 
 // Global variables
 let intervalID = ''
+const sessionTime = 25 * 60
+const breakTime = 5 * 60
 
 const Timer = {
   isBreak: false,
-  currentTime: 6,
+  currentTime: 25 * 60,
   
   isActive: false,
 
@@ -23,11 +25,11 @@ const Timer = {
         Timer.isActive = false
 
         if (Timer.isBreak) {
-          Timer.currentTime = 3
+          Timer.currentTime = breakTime
           window.alert('Nice job! Now you can take a break')
         }
         else {
-          Timer.currentTime = 6
+          Timer.currentTime = sessionTime
           window.alert('The break is over, keep yourself focused for one more session')
         }
         
@@ -40,7 +42,7 @@ const Timer = {
   resetCountdown () {
     clearInterval(intervalID)
     Timer.isActive = false
-    Timer.currentTime = Timer.isBreak ? 3 : 6
+    Timer.currentTime = Timer.isBreak ? 5 * 60 : 25 * 60
     Timer.renderTimer(Timer.isActive)
   },
 
