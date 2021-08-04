@@ -98,7 +98,7 @@
           </div>
         </header>
 
-        <button type="button" class="btn btn-primary btn-sm" onclick="openModal()">+ New Transaction</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="Modal.open()">+ New Transaction</button>
 
         <table>
           <thead>
@@ -128,10 +128,11 @@
               </button>
             </div>
             <div class="modal-body">
+
               <form method="POST" id="add-transaction-form" onsubmit="addTransaction(event)">
                 <div class="input-group mb-3">
                   <label for="transaction-title" class="sr-only">Título</label>
-                  <input type="text" name="transaction-title" id="transaction-title" placeholder="Título" required>
+                  <input type="text" name="transaction-title" id="transaction-title" placeholder="Título" required autocomplete="off">
                 </div>
                 <div class="input-group mb-3">
                   <label for="date" class="sr-only">Data</label>
@@ -139,9 +140,10 @@
                 </div>
                 <div class="input-group mb-3">
                   <label for="amount" class="sr-only">Valor</label>
-                  <input type="number" step="0.01" name="transaction-amount" id="transaction-amount" required>
+                  <input type="number" step="0.01" name="transaction-amount" id="transaction-amount" placeholder="Valor - R$" required>
                 </div>
               </form>
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

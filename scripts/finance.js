@@ -11,10 +11,6 @@ const transactions = [
   }
 ]
 
-function openModal() {
-  $('#add-transaction-modal').modal('show')
-}
-
 function addTransaction(event) {
   event.preventDefault()
 
@@ -30,40 +26,57 @@ function addTransaction(event) {
   }
 
   transactions.push(transaction)
+  Form.clearFields()
   App.reload()
 
   //console.log(transactions)
 }
 
-function createTransactionRow(transaction, index) {
-  const transactionRow = document.createElement('tr')
-  transactionRow.dataset.index = index
-
-  transactionRow.innerHTML = `
-    <td>${index + 1}</td>
-    <td>${transaction.title}</td>
-    <td>${transaction.date}</td>
-    <td class=${Number(transaction.amount) > 0 ? 'income' : 'outcome'}>R$ ${transaction.amount}</td>
-  `
-
-  const transactionsContainer = document.querySelector('#transactions-container')
-  transactionsContainer.appendChild(transactionRow)
+const Form = {
+  clearFields() {
+    document.querySelector('#transaction-title').value = ""
+    document.querySelector('#transaction-date').value = ""
+    document.querySelector('#transaction-amount').value = ""
+  }
 }
 
-function clearTransactions() {
-  const transactionsContainer = document.querySelector('#transactions-container')
-  transactionsContainer.innerHTML = ""
+const Modal = {
+  open() {
+    $('#add-transaction-modal').modal('show')
+  }
+}
+
+const Document = {
+  createTransactionRow(transaction, index) {
+    const transactionRow = document.createElement('tr')
+    transactionRow.dataset.index = index
+  
+    transactionRow.innerHTML = `
+      <td>${index + 1}</td>
+      <td>${transaction.title}</td>
+      <td>${transaction.date}</td>
+      <td class=${Number(transaction.amount) > 0 ? 'income' : 'outcome'}>R$ ${transaction.amount}</td>
+    `
+  
+    const transactionsContainer = document.querySelector('#transactions-container')
+    transactionsContainer.appendChild(transactionRow)
+  },
+
+  clearTransactions() {
+    const transactionsContainer = document.querySelector('#transactions-container')
+    transactionsContainer.innerHTML = ""
+  }
 }
 
 const App = {
   init() {
     transactions.forEach((transaction, index) => {
-      createTransactionRow(transaction, index)
+      Document.createTransactionRow(transaction, index)
     })
   },
 
   reload() {
-    clearTransactions()
+    Document.clearTransactions()
     this.init()
   }
 
