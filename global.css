@@ -85,4 +85,6 @@ main {
   background: #191921;
   text-align: center;
   padding: 4rem;
+
+  overflow: scroll;
 }

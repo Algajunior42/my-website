@@ -1,28 +1,14 @@
-const transactions = [
-  {
-    title: "Pizza",
-    date: "2021-08-01",
-    amount: "-51"
-  },
-  {
-    title: "Bolsa estágio",
-    date: "2021-08-03",
-    amount: "510"
-  }
-]
+const transactions = []
 
 function addTransaction(event) {
   event.preventDefault()
 
-  const transactionTitle = document.querySelector('#transaction-title').value
-  const transactionDate = document.querySelector('#transaction-date').value
-  const transactionAmount = document.querySelector('#transaction-amount').value
+  const { title, date, amount } = Form.getFormattedData()
 
   const transaction = {
-    id: Date.now(),
-    title: transactionTitle,
-    date: transactionDate,
-    amount: transactionAmount
+    title,
+    date,
+    amount
   }
 
   transactions.push(transaction)
@@ -32,7 +18,35 @@ function addTransaction(event) {
   //console.log(transactions)
 }
 
+const Utils = {
+  formatDate(date) {
+    const splittedDate = date.split('-')
+    return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
+  },
+
+  formatCurrency(amount) {
+    amount = amount.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    })
+
+    return amount
+  }
+}
+
 const Form = {
+  title: document.querySelector('#transaction-title'),
+  date: document.querySelector('#transaction-date'),
+  amount: document.querySelector('#transaction-amount'),
+
+  getFormattedData() {
+    return {
+      title: this.title.value,
+      date: Utils.formatDate(this.date.value),
+      amount: Number(this.amount.value)
+    }
+  },
+
   clearFields() {
     document.querySelector('#transaction-title').value = ""
     document.querySelector('#transaction-date').value = ""
@@ -50,12 +64,14 @@ const Document = {
   createTransactionRow(transaction, index) {
     const transactionRow = document.createElement('tr')
     transactionRow.dataset.index = index
+
+    const formattedAmount = Utils.formatCurrency(transaction.amount)
   
     transactionRow.innerHTML = `
       <td>${index + 1}</td>
       <td>${transaction.title}</td>
       <td>${transaction.date}</td>
-      <td class=${Number(transaction.amount) > 0 ? 'income' : 'outcome'}>R$ ${transaction.amount}</td>
+      <td class=${transaction.amount > 0 ? 'income' : 'outcome'}>${formattedAmount}</td>
     `
   
     const transactionsContainer = document.querySelector('#transactions-container')
