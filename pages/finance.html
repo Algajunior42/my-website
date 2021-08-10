@@ -46,17 +46,17 @@
       <nav class="listSocialLinks">
         <ul>
           <li>
-            <a href="">
+            <a href="https://github.com/Algajunior42" target="_blank">
               <i class="fab fa-github-square"></i>
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="https://www.linkedin.com/in/algacyr-melo-3522a7195/" target="_blank">
               <i class="fab fa-linkedin"></i>
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="https://www.instagram.com/algacyr.melo/" target="_blank">
               <i class="fab fa-instagram-square"></i>
             </a>
           </li>
@@ -74,17 +74,17 @@
               <h1>Incomes</h1>
               <img src="../assets/income.svg" alt="Income">
             </header>
-            <div class="amount">
-              R$ 2000,00
+            <div class="amount" id="incomes">
+              R$ 0,00
             </div>
           </div>
           <div class="balance-card">
             <header>
-              <h1>Outcomes</h1>
+              <h1>Expenses</h1>
               <img src="../assets/outcome.svg" alt="Outcome">
             </header>
-            <div class="amount">
-              R$ 500,00
+            <div class="amount" id="expenses">
+              R$ 0,00
             </div>
           </div>
           <div class="balance-card">
@@ -92,8 +92,8 @@
               <h1>Total</h1>
               <img src="../assets/total.svg" alt="Total">
             </header>
-            <div class="amount">
-              R$ 1500,00
+            <div class="amount" id="total">
+              R$ 0,00
             </div>
           </div>
         </header>
@@ -129,7 +129,7 @@
             </div>
             <div class="modal-body">
 
-              <form method="POST" id="add-transaction-form" onsubmit="addTransaction(event)">
+              <form method="POST" id="add-transaction-form" onsubmit="Form.handleSubmit(event)">
                 <div class="input-group mb-3">
                   <label for="transaction-title" class="sr-only">Título</label>
                   <input type="text" name="transaction-title" id="transaction-title" placeholder="Título" required autocomplete="off">

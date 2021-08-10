@@ -1,21 +1,10 @@
 const transactions = []
 
-function addTransaction(event) {
-  event.preventDefault()
-
-  const { title, date, amount } = Form.getFormattedData()
-
-  const transaction = {
-    title,
-    date,
-    amount
+const Transaction = {
+  add(newTransaction) {
+    transactions.push(newTransaction)
+    App.reload()
   }
-
-  transactions.push(transaction)
-  Form.clearFields()
-  App.reload()
-
-  //console.log(transactions)
 }
 
 const Utils = {
@@ -39,6 +28,14 @@ const Form = {
   date: document.querySelector('#transaction-date'),
   amount: document.querySelector('#transaction-amount'),
 
+  handleSubmit(event) {
+    event.preventDefault()
+
+    const newTransaction = this.getFormattedData()
+    Transaction.add(newTransaction)
+    this.clearFields()
+  },
+
   getFormattedData() {
     return {
       title: this.title.value,
@@ -51,6 +48,35 @@ const Form = {
     document.querySelector('#transaction-title').value = ""
     document.querySelector('#transaction-date').value = ""
     document.querySelector('#transaction-amount').value = ""
+  }
+}
+
+const Balance = {
+  getIncomes() {
+    let incomes = transactions.reduce((acc, transaction) => {
+      if (transaction.amount >= 0) {
+        acc += transaction.amount
+      }
+      return acc
+    }, 0)
+
+    return incomes
+  },
+
+  getExpenses() {
+    let expenses = transactions.reduce((acc, transaction) => {
+      if (transaction.amount < 0) {
+        acc += transaction.amount
+      }
+      return acc
+    }, 0)
+
+    return expenses
+  },
+
+  getTotal() {
+    const total = this.getIncomes() + this.getExpenses()
+    return total
   }
 }
 
@@ -78,9 +104,23 @@ const Document = {
     transactionsContainer.appendChild(transactionRow)
   },
 
+  
+
   clearTransactions() {
     const transactionsContainer = document.querySelector('#transactions-container')
     transactionsContainer.innerHTML = ""
+  },
+
+  updateBalance() {
+    document
+      .querySelector('#incomes')
+      .textContent = Utils.formatCurrency(Balance.getIncomes())
+    document
+      .querySelector('#expenses')
+      .textContent = Utils.formatCurrency(Balance.getExpenses())
+    document
+      .querySelector('#total')
+      .textContent = Utils.formatCurrency(Balance.getTotal())
   }
 }
 
@@ -89,6 +129,8 @@ const App = {
     transactions.forEach((transaction, index) => {
       Document.createTransactionRow(transaction, index)
     })
+
+    Document.updateBalance()
   },
 
   reload() {
