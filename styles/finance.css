@@ -61,6 +61,10 @@ table td {
   padding: 1rem 0;
 }
 
+#remove-button {
+  cursor: pointer;
+}
+
 table td.income {
   color: #28a745;
 }
@@ -79,6 +83,11 @@ table td.outcome {
   color: #191921;
 }
 
+#user-guide {
+  color: #dc3545;
+}
+
+/* Hidden input labels */
 .sr-only {
   position: absolute;
   width: 1px;

@@ -1,8 +1,16 @@
 const transactions = []
 
 const Transaction = {
+  data: JSON.parse(localStorage.getItem(':transactions')) || [],
   add(newTransaction) {
-    transactions.push(newTransaction)
+    this.data.push(newTransaction)
+    localStorage.setItem(':transactions', JSON.stringify(this.data))
+    App.reload()
+  },
+
+  remove(index) {
+    this.data.splice(index, 1)
+    localStorage.setItem(':transactions', JSON.stringify(this.data))
     App.reload()
   }
 }
@@ -34,6 +42,7 @@ const Form = {
     const newTransaction = this.getFormattedData()
     Transaction.add(newTransaction)
     this.clearFields()
+    Modal.close()
   },
 
   getFormattedData() {
@@ -53,7 +62,7 @@ const Form = {
 
 const Balance = {
   getIncomes() {
-    let incomes = transactions.reduce((acc, transaction) => {
+    let incomes = Transaction.data.reduce((acc, transaction) => {
       if (transaction.amount >= 0) {
         acc += transaction.amount
       }
@@ -64,7 +73,7 @@ const Balance = {
   },
 
   getExpenses() {
-    let expenses = transactions.reduce((acc, transaction) => {
+    let expenses = Transaction.data.reduce((acc, transaction) => {
       if (transaction.amount < 0) {
         acc += transaction.amount
       }
@@ -83,6 +92,10 @@ const Balance = {
 const Modal = {
   open() {
     $('#add-transaction-modal').modal('show')
+  },
+
+  close() {
+    $('#add-transaction-modal').modal('hide')
   }
 }
 
@@ -98,6 +111,9 @@ const Document = {
       <td>${transaction.title}</td>
       <td>${transaction.date}</td>
       <td class=${transaction.amount > 0 ? 'income' : 'outcome'}>${formattedAmount}</td>
+      <td>
+        <img src="../assets/minus.svg" id="remove-button" onclick="Transaction.remove(${index})"/>
+      </td>
     `
   
     const transactionsContainer = document.querySelector('#transactions-container')
@@ -126,7 +142,7 @@ const Document = {
 
 const App = {
   init() {
-    transactions.forEach((transaction, index) => {
+    Transaction.data.forEach((transaction, index) => {
       Document.createTransactionRow(transaction, index)
     })
 
