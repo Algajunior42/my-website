@@ -1,4 +1,4 @@
-.finance-container {
+#finance-container {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -8,7 +8,7 @@
   height: 100%;
 }
 
-.summary {
+#summary {
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -43,14 +43,18 @@
   transform: translateY(-15%);
 }
 
-.amount {
+.amount-container {
   font-size: 1.5rem;
   text-align: left;
 }
 
+#table-container {
+  width: 100%;
+  overflow: auto;
+}
+
 table {
   width: 100%;
-  text-align: left;
 }
 
 table tr {
@@ -61,10 +65,6 @@ table td {
   padding: 1rem 0;
 }
 
-#remove-button {
-  cursor: pointer;
-}
-
 table td.income {
   color: #28a745;
 }
@@ -73,6 +73,9 @@ table td.outcome {
   color: #dc3545;
 }
 
+#remove-button {
+  cursor: pointer;
+}
 
 .modal-body {
   display: flex;
@@ -83,7 +86,7 @@ table td.outcome {
   color: #191921;
 }
 
-#user-guide {
+#user-tip {
   color: #dc3545;
 }
 

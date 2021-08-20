@@ -24,9 +24,9 @@
 </head>
 <body>
 
-  <div class="pageContainer">
+  <div id="page-container">
     <aside>
-      <nav class="listPageLinks">
+      <nav id="pages-anchor-list">
         <ul>
           <li>
             <a href="/">Home</a>
@@ -46,7 +46,7 @@
       <nav class="listSocialLinks">
         <ul>
           <li>
-            <a href="https://github.com/Algajunior42" target="_blank">
+            <a href="https://github.com/algadev" target="_blank">
               <i class="fab fa-github-square"></i>
             </a>
           </li>
@@ -67,14 +67,15 @@
   
     <main>
 
-      <div class="finance-container">
-        <header class="summary">
+      <div id="finance-container">
+
+        <header id="summary">
           <div class="balance-card">
             <header>
               <h1>Incomes</h1>
               <img src="../assets/income.svg" alt="Income">
             </header>
-            <div class="amount" id="incomes">
+            <div class="amount-container" id="incomes">
               R$ 0,00
             </div>
           </div>
@@ -83,7 +84,7 @@
               <h1>Expenses</h1>
               <img src="../assets/outcome.svg" alt="Outcome">
             </header>
-            <div class="amount" id="expenses">
+            <div class="amount-container" id="expenses">
               R$ 0,00
             </div>
           </div>
@@ -92,7 +93,7 @@
               <h1>Total</h1>
               <img src="../assets/total.svg" alt="Total">
             </header>
-            <div class="amount" id="total">
+            <div class="amount-container" id="total">
               R$ 0,00
             </div>
           </div>
@@ -100,24 +101,27 @@
 
         <button type="button" class="btn btn-primary btn-sm" onclick="Modal.open()">+ New Transaction</button>
 
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th>Título</th>
-              <th>Data</th>
-              <th>Valor</th>
-            </tr>
-          </thead>
-
-          <tbody id="transactions-container">
-            
-          </tbody>
-         
-        </table>
+        <div id="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Título</th>
+                <th>Data</th>
+                <th>Valor</th>
+              </tr>
+            </thead>
+  
+            <tbody id="transactions-container">
+              
+            </tbody>
+           
+          </table>
+        </div>
 
       </div>
 
+      <!-- Bootstrap Modal -->
       <div class="modal" tabindex="-1" id="add-transaction-modal">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -142,7 +146,7 @@
                   <label for="amount" class="sr-only">Valor</label>
                   <input type="number" step="0.01" name="transaction-amount" id="transaction-amount" placeholder="Valor - R$" required>
                 </div>
-                <span id="user-guide">* Use o sinal negativo(-) em transações de despesa</span>
+                <span id="user-tip">* Use o sinal negativo(-) em transações de despesa</span>
               </form>
 
             </div>

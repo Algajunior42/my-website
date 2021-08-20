@@ -30,7 +30,7 @@ button {
 
 /**/
 
-.pageContainer {
+#page-container {
   display: flex;
 
   width: 100vw;
@@ -50,16 +50,16 @@ aside {
   text-align: center;
 }
 
-.listPageLinks {
+#pages-anchor-list {
   font-size: 1.25rem;
   font-weight: 300;
 }
 
-.listPageLinks li + li {
+#pages-anchor-list li + li {
   margin-top: 1rem;
 }
 
-.listPageLinks a.active {
+#pages-anchor-list a.active {
   font-weight: bold;
 }
 
