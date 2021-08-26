@@ -1,4 +1,4 @@
-#finance-container {
+.finance-container {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -8,7 +8,8 @@
   height: 100%;
 }
 
-#summary {
+/* Summary */
+.balance {
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -48,7 +49,8 @@
   text-align: left;
 }
 
-#table-container {
+/* Table */
+.table-container {
   width: 100%;
   overflow: auto;
 }
@@ -73,10 +75,27 @@ table td.outcome {
   color: #dc3545;
 }
 
+#counter-th, #remove-th {
+  min-width: 4rem;
+}
+
+#title-th {
+  width: 50%;
+}
+
+#date-th {
+  width: 25%;
+}
+
+#amount-th {
+  width: 25%;
+}
+
 #remove-button {
   cursor: pointer;
 }
 
+/* Modal */
 .modal-body {
   display: flex;
   justify-content: center;

@@ -24,9 +24,10 @@
 </head>
 <body>
 
-  <div id="page-container">
+  <div class="page-container">
+
     <aside>
-      <nav id="pages-anchor-list">
+      <nav class="pages-anchor-list">
         <ul>
           <li>
             <a href="/">Home</a>
@@ -38,12 +39,12 @@
             <a href="./finance.html" class="active">Finance Manager</a>
           </li>
           <li>
-            <a href="">TO DO list</a>
+            <a href="../pages/my-repositories.html">My repositories</a>
           </li>
         </ul>
       </nav>
 
-      <nav class="listSocialLinks">
+      <nav class="social-contact-list">
         <ul>
           <li>
             <a href="https://github.com/algadev" target="_blank">
@@ -67,9 +68,9 @@
   
     <main>
 
-      <div id="finance-container">
+      <div class="finance-container">
 
-        <header id="summary">
+        <header class="balance">
           <div class="balance-card">
             <header>
               <h1>Incomes</h1>
@@ -101,14 +102,15 @@
 
         <button type="button" class="btn btn-primary btn-sm" onclick="Modal.open()">+ New Transaction</button>
 
-        <div id="table-container">
+        <div class="table-container">
           <table>
             <thead>
               <tr>
-                <th></th>
-                <th>Título</th>
-                <th>Data</th>
-                <th>Valor</th>
+                <th id="counter-th"></th>
+                <th id="title-th">Título</th>
+                <th id="date-th">Data</th>
+                <th id="amount-th">Valor</th>
+                <th id="remove-th"></th>
               </tr>
             </thead>
   

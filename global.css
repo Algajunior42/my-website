@@ -30,7 +30,7 @@ button {
 
 /**/
 
-#page-container {
+.page-container {
   display: flex;
 
   width: 100vw;
@@ -50,29 +50,29 @@ aside {
   text-align: center;
 }
 
-#pages-anchor-list {
+.pages-anchor-list {
   font-size: 1.25rem;
   font-weight: 300;
 }
 
-#pages-anchor-list li + li {
+.pages-anchor-list li + li {
   margin-top: 1rem;
 }
 
-#pages-anchor-list a.active {
+.pages-anchor-list a.active {
   font-weight: bold;
 }
 
-.listSocialLinks {
+.social-contact-list {
   width: 100%;
 }
 
-.listSocialLinks ul {
+.social-contact-list ul {
   display: flex;
   justify-content: space-around;
 }
 
-.listSocialLinks i {
+.social-contact-list i {
   font-size: 2rem;
 }
 
