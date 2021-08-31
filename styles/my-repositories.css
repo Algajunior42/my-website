@@ -1,8 +1,4 @@
-#list-root {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-h2 {
-  font-size: 1.2rem;
+main li {
+  border: 1px solid #cecdce52;
+  margin-bottom: 1rem;
 }
