@@ -70,7 +70,7 @@
 
       <div class="finance-container">
 
-        <header class="balance">
+        <div class="balance">
           <div class="balance-card">
             <header>
               <h1>Incomes</h1>
@@ -98,7 +98,7 @@
               R$ 0,00
             </div>
           </div>
-        </header>
+        </div>
 
         <button type="button" class="btn btn-primary btn-sm" onclick="Modal.open()">+ New Transaction</button>
 
@@ -141,11 +141,11 @@
                   <input type="text" name="transaction-title" id="transaction-title" placeholder="Título" required autocomplete="off">
                 </div>
                 <div class="input-group mb-3">
-                  <label for="date" class="sr-only">Data</label>
-                  <input type="date" name="transaction-date" id="transaction-date" placeholder="Data" required>
+                  <label for="transaction-date" class="sr-only">Data</label>
+                  <input type="date" name="transaction-date" id="transaction-date" required>
                 </div>
                 <div class="input-group mb-3">
-                  <label for="amount" class="sr-only">Valor</label>
+                  <label for="transaction-amount" class="sr-only">Valor</label>
                   <input type="number" step="0.01" name="transaction-amount" id="transaction-amount" placeholder="Valor - R$" required>
                 </div>
                 <span id="user-tip">* Use o sinal negativo(-) em transações de despesa</span>
