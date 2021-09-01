@@ -9,7 +9,10 @@ fetch('https://api.github.com/users/algadev/repos')
       repositoryItem.innerHTML = `
       <h2>${repository.name}</h2>
       <p>${repository?.description || ''}</p>
-      <a href=${repository.html_url} target='_blank'>See on Github</a>
+      <a href=${repository.html_url} target='_blank'>
+        See on Github
+        <i class="fas fa-external-link-square-alt"></i>
+      </a>
       `
 
       repositoryList.appendChild(repositoryItem)
