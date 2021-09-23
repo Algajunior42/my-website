@@ -121,3 +121,18 @@ table td.outcome {
   white-space: nowrap;
   border-width: 0;
 }
+
+@media (max-width: 720px) {
+  .balance {
+    flex-direction: column;
+  }
+
+  .finance-container {
+    height: 100vh;
+  }
+
+  .table-container {
+    width: 100%;
+    overflow: visible;
+  }
+}

@@ -1,4 +1,4 @@
-.pomodoro-timer-container {
+#pomodoro-timer-container {
   display: flex;
   flex-direction: column;
 
@@ -8,7 +8,7 @@
   padding: 2rem;
 }
 
-.pomodoro-timer-container h1 {
+#pomodoro-timer-container h1 {
   font-size: 1rem;
 }
 
@@ -16,6 +16,6 @@
   font-size: 4rem;
 }
 
-.actions button svg {
+#buttons-container button svg {
   transform: translateY(-2px);
 }

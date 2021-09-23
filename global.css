@@ -6,6 +6,8 @@
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
   font-family: 'Roboto';
   color: #cecdce;
 }
@@ -30,11 +32,11 @@ button {
 
 /**/
 
-.page-container {
+#page-container {
   display: flex;
 
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 aside {
@@ -81,6 +83,7 @@ main {
   justify-content: center;
 
   width: 100%;
+  height: 100%;
   background: #191921;
   text-align: center;
   padding: 4rem;
@@ -91,4 +94,19 @@ main {
 #profile-image {
   width: 100px;
   height: 100px;
+}
+
+/* Mobile rules */
+@media (max-width: 720px) {
+  :root {
+    font-size: 87.5%;
+  }
+
+  #page-container {
+    flex-direction: column;
+  }
+
+  aside {
+    width: 100%;
+  }
 }
