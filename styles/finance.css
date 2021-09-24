@@ -64,7 +64,7 @@ table tr {
 }
 
 table td {
-  padding: 1rem 0;
+  padding: 1rem;
 }
 
 table td.income {
@@ -122,7 +122,7 @@ table td.outcome {
   border-width: 0;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 880px) {
   .balance {
     flex-direction: column;
   }
