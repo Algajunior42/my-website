@@ -1,20 +1,16 @@
 // Global variables
-const sessionTime = 25 * 60
-const breakTime = 5 * 60
+const SESSION_TIME = 25 * 60
+const BREAK_TIME = 5 * 60
 
 let intervalID
 
-
 const Timer = {
   status: 'session',
-  time: sessionTime,
+  time: SESSION_TIME,
   screen: document.querySelector('#timer-screen'),
-
   startButton: document.querySelector('#start'),
   resetButton: document.querySelector('#reset'),
-  
   isActive: false,
-
   start() {
     this.isActive = true
     this.startButton.setAttribute('disabled', 'true')
@@ -22,24 +18,20 @@ const Timer = {
 
     this.update()
   },
-
   listen() {
-
     // Listen when the time ends
     if (this.time === 0) {
       this.status = this.status === 'session' ? 'break' : 'session'
       this.isActive = false
-
       // Send feedback to user
       if (this.status === 'break') {
-        this.time = breakTime
+        this.time = BREAK_TIME
         window.alert('Nice job! Now you can take a break')
       }
       else if (this.status === 'session') {
-        this.time = sessionTime
+        this.time = SESSION_TIME
         window.alert('The break is over, keep yourself focused for one more session')
       }
-
       this.reset(intervalID)
     }
   },
@@ -48,15 +40,13 @@ const Timer = {
     clearInterval(intervalID)
 
     this.isActive = false
-    this.time = this.status === 'session' ? sessionTime : breakTime
+    this.time = this.status === 'session' ? SESSION_TIME : BREAK_TIME
     this.init()
   },
 
   update() {
     intervalID = setInterval(() => {
       this.time -= 1
-
-      let [minutesFormatted, secondsFormatted] = Utils.getFormattedTime(this.time)
 
       this.screen.textContent = Utils.getFormattedTime(this.time)
       this.listen(intervalID)
@@ -81,7 +71,6 @@ const Utils = {
   getFormattedTime(time) {
     let minutes = Math.floor(time / 60)
     let seconds = time % 60
-
     let minutesFormatted = String(minutes).padStart(2, '0')
     let secondsFormatted = String(seconds).padStart(2, '0')
 

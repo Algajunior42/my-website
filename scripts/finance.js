@@ -157,6 +157,3 @@ const App = {
 }
 
 App.init()
-
-
-

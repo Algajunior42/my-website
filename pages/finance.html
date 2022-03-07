@@ -1,175 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- GOOGLE FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">  
+		<!-- GOOGLE FONTS -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">  
 
-  <!-- FONTAWESOME -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<!-- FONTAWESOME -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- BOOTSTRAP 4.6 STYLES -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+		<!-- BOOTSTRAP 4.6 STYLES -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-  <!-- STYLESHEETS -->
-  <link rel="stylesheet" href="../global.css">
-  <link rel="stylesheet" href="../styles/finance.css">
+		<!-- STYLESHEETS -->
+		<link rel="stylesheet" href="../global.css">
+		<link rel="stylesheet" href="../styles/finance.css">
 
-  <title>My website</title>
-</head>
-<body>
+		<title>My website</title>
+	</head>
+	<body>
+		<div id="page-container">
+			<aside>
+				<nav class="pages-anchor-list">
+					<ul>
+						<li>
+							<a href="/">Home</a>
+						</li>
+						<li>
+							<a href="./pomodoro-timer.html">Pomodoro Timer</a>
+						</li>
+						<li>
+							<a href="./finance.html" class="active">Finance Manager</a>
+						</li>
+						<li>
+							<a href="../pages/repositories.html">My repositories</a>
+						</li>
+					</ul>
+				</nav>
 
-  <div id="page-container">
+				<nav class="social-contact-list">
+					<ul>
+						<li>
+							<a href="https://github.com/algadev" target="_blank">
+								<i class="fab fa-github-square"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.linkedin.com/in/algacyr-melo-3522a7195/" target="_blank">
+								<i class="fab fa-linkedin"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.instagram.com/algacyr.melo/" target="_blank">
+								<i class="fab fa-instagram-square"></i>
+							</a>
+						</li>
+					</ul>
+				</nav>
 
-    <aside>
-      <nav class="pages-anchor-list">
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="./pomodoro-timer.html">Pomodoro Timer</a>
-          </li>
-          <li>
-            <a href="./finance.html" class="active">Finance Manager</a>
-          </li>
-          <li>
-            <a href="../pages/my-repositories.html">My repositories</a>
-          </li>
-        </ul>
-      </nav>
+			</aside>
+			<main>
+				<div class="finance-container">
+					<div class="balance">
+						<div class="balance-card">
+							<header>
+								<h1>Incomes</h1>
+								<img src="../assets/income.svg" alt="Income">
+							</header>
+							<div class="amount-container" id="incomes">
+								R$ 0,00
+							</div>
+						</div>
+						<div class="balance-card">
+							<header>
+								<h1>Expenses</h1>
+								<img src="../assets/outcome.svg" alt="Outcome">
+							</header>
+							<div class="amount-container" id="expenses">
+								R$ 0,00
+							</div>
+						</div>
+						<div class="balance-card">
+							<header>
+								<h1>Total</h1>
+								<img src="../assets/total.svg" alt="Total">
+							</header>
+							<div class="amount-container" id="total">
+								R$ 0,00
+							</div>
+						</div>
+					</div>
 
-      <nav class="social-contact-list">
-        <ul>
-          <li>
-            <a href="https://github.com/algadev" target="_blank">
-              <i class="fab fa-github-square"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/algacyr-melo-3522a7195/" target="_blank">
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/algacyr.melo/" target="_blank">
-              <i class="fab fa-instagram-square"></i>
-            </a>
-          </li>
-        </ul>
-      </nav>
+					<button type="button" class="btn btn-primary btn-sm" onclick="Modal.open()">+ New Transaction</button>
 
-    </aside>
-  
-    <main>
+					<div class="table-container">
+						<table>
+							<thead>
+								<tr>
+									<th id="counter-th"></th>
+									<th id="title-th">Título</th>
+									<th id="date-th">Data</th>
+									<th id="amount-th">Valor</th>
+									<th id="remove-th"></th>
+								</tr>
+							</thead>
+		
+							<tbody id="transactions-container">
+								
+							</tbody>
+						
+						</table>
+					</div>
 
-      <div class="finance-container">
+				</div>
 
-        <div class="balance">
-          <div class="balance-card">
-            <header>
-              <h1>Incomes</h1>
-              <img src="../assets/income.svg" alt="Income">
-            </header>
-            <div class="amount-container" id="incomes">
-              R$ 0,00
-            </div>
-          </div>
-          <div class="balance-card">
-            <header>
-              <h1>Expenses</h1>
-              <img src="../assets/outcome.svg" alt="Outcome">
-            </header>
-            <div class="amount-container" id="expenses">
-              R$ 0,00
-            </div>
-          </div>
-          <div class="balance-card">
-            <header>
-              <h1>Total</h1>
-              <img src="../assets/total.svg" alt="Total">
-            </header>
-            <div class="amount-container" id="total">
-              R$ 0,00
-            </div>
-          </div>
-        </div>
+				<!-- Bootstrap Modal -->
+				<div class="modal" tabindex="-1" id="add-transaction-modal">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Nova Transação</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
 
-        <button type="button" class="btn btn-primary btn-sm" onclick="Modal.open()">+ New Transaction</button>
+								<form method="POST" id="add-transaction-form" onsubmit="Form.handleSubmit(event)">
+									<div class="input-group mb-3">
+										<label for="transaction-title" class="sr-only">Título</label>
+										<input type="text" name="transaction-title" id="transaction-title" placeholder="Título" required autocomplete="off">
+									</div>
+									<div class="input-group mb-3">
+										<label for="transaction-date" class="sr-only">Data</label>
+										<input type="date" name="transaction-date" id="transaction-date" required>
+									</div>
+									<div class="input-group mb-3">
+										<label for="transaction-amount" class="sr-only">Valor</label>
+										<input type="number" step="0.01" name="transaction-amount" id="transaction-amount" placeholder="Valor - R$" required>
+									</div>
+									<span id="user-tip">* Use o sinal negativo(-) em transações de despesa</span>
+								</form>
 
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th id="counter-th"></th>
-                <th id="title-th">Título</th>
-                <th id="date-th">Data</th>
-                <th id="amount-th">Valor</th>
-                <th id="remove-th"></th>
-              </tr>
-            </thead>
-  
-            <tbody id="transactions-container">
-              
-            </tbody>
-           
-          </table>
-        </div>
+							</div>
+							<div class="modal-footer">
+								
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								<button type="submit" class="btn btn-primary" form="add-transaction-form">Save</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		
+		<!-- BOOTSTRAP SCRIPTS -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
-      </div>
-
-      <!-- Bootstrap Modal -->
-      <div class="modal" tabindex="-1" id="add-transaction-modal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Nova Transação</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-
-              <form method="POST" id="add-transaction-form" onsubmit="Form.handleSubmit(event)">
-                <div class="input-group mb-3">
-                  <label for="transaction-title" class="sr-only">Título</label>
-                  <input type="text" name="transaction-title" id="transaction-title" placeholder="Título" required autocomplete="off">
-                </div>
-                <div class="input-group mb-3">
-                  <label for="transaction-date" class="sr-only">Data</label>
-                  <input type="date" name="transaction-date" id="transaction-date" required>
-                </div>
-                <div class="input-group mb-3">
-                  <label for="transaction-amount" class="sr-only">Valor</label>
-                  <input type="number" step="0.01" name="transaction-amount" id="transaction-amount" placeholder="Valor - R$" required>
-                </div>
-                <span id="user-tip">* Use o sinal negativo(-) em transações de despesa</span>
-              </form>
-
-            </div>
-            <div class="modal-footer">
-              
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" form="add-transaction-form">Save</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </main>
-
-  </div>
-  
-  <!-- BOOTSTRAP SCRIPTS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-  <!-- PAGE SCRIPTS -->
-  <script src="../scripts/finance.js"></script>
-</body>
+		<!-- PAGE SCRIPTS -->
+		<script src="../scripts/finance.js"></script>
+	</body>
 </html>
