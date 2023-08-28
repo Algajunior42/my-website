@@ -1,7 +1,7 @@
 const repositoriesRoot = document.querySelector('#repositories-root')
 
 async function getRepositories() {
-	const response = await fetch('https://api.github.com/users/algadev/repos');
+	const response = await fetch('https://api.github.com/users/algacyr-melo/repos');
 	const repositories = response.json();
 
 	return repositories;
